@@ -1,12 +1,3 @@
-lesson 03/venv/
-lesson 03/migrations/
-lesson 04/venv/
-lesson 04/controllers/__pycache__/
-lesson 04/models/__pycache__/
-lesson 04/migrations/
-lesson 04/__pycache__/
-lesson 05/__pycache__/
-lesson 05/controllers/__pycache__/
-lesson 05/migrations/
-lesson 05/models/__pycache__/
-lesson 05/utils/__pycache__/
+**/venv/*
+**/migrations/*
+**/__pycache__/*
