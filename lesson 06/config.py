@@ -4,7 +4,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config:
-    SECRET_KEY = "Vp62aTffoX7CC@"
+    SECRET_KEY = os.environ.get("SECRET_KEY", "Vp62aTffoX7CC@")
 
     APP_TITLE = "Full Stack Developer: Backend"
 
@@ -15,7 +15,7 @@ class Config:
     
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-    JWT_SECRET_KEY = "anotverysafekey"
+    JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY", "t5rbggFvME54t3D@")
     JWT_TOKEN_LOCATION = ["headers"]
 
     @staticmethod
