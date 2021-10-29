@@ -1,11 +1,7 @@
 # Full Stack Developer: Backend
 
-### TODOs
+### Using
 
-- [x] Adicionar o banco de dados
-- [x] Criar usuários no banco de dados
-- [x] Controller para gerenciar os usuários
-  - [x] Create
-  - [x] Read
-  - [x] Update
-  - [x] Delete
+In this lesson, we added the project on Heroku.
+
+The SQLALCHEMY_DATABASE_URI on the config file is getting the environment variable from Heroku. If you want to use locally change this variable accordingly.
