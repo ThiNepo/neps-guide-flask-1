@@ -1,4 +1,7 @@
-const app = Vue.createApp({
+Vue.use(Toasted);
+
+const app = new Vue({
+  el: "#app",
   data() {
     return {
       posts: [],
@@ -8,7 +11,6 @@ const app = Vue.createApp({
       text: "",
       token: null,
       //user: null,
-      login_error_message: "",
       username: "",
       password: "",
       email: "",
@@ -67,7 +69,11 @@ const app = Vue.createApp({
           this.fetch_posts();
         })
         .catch((error) => {
-          this.login_error_message = error.response.data.msg;
+          this.$toasted.show("Wrong username or password", {
+            type: "error",
+            position: "bottom-center",
+            duration: 4000,
+          });
         });
     },
 
@@ -82,7 +88,11 @@ const app = Vue.createApp({
           this.is_registering = false;
         })
         .catch((error) => {
-          this.login_error_message = error.response.data.msg;
+          this.$toasted.show(error.response.data.msg, {
+            type: "error",
+            position: "bottom-center",
+            duration: 4000,
+          });
         });
     },
   },
@@ -92,3 +102,8 @@ const app = Vue.createApp({
     },
   },
 });
+
+// window.addEventListener("load", (event) => {
+//   console.log(Toasted);
+//   app.use(Toasted);
+// });

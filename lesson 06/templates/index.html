@@ -2,13 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Vue Mastery</title>
+    <title>Mini Feed</title>
     <!-- Import Styles -->
     <link rel="stylesheet" href="%%url_for('static', filename='assets/styles.css')%%">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <!-- Import Vue.js -->
-    <script src="https://unpkg.com/vue@3.2.20/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-toasted"></script>
   </head>
   <body>
     <div id="app">
@@ -36,8 +37,6 @@
                             <input v-model="username" class="input" type="text"  style="margin-top: 20px;" placeholder="Username">
                             <input v-model="password" class="input" type="password"  style="margin-top: 20px;" placeholder="Password">
                             <button @click="login()" class="button" style="width: 100%; margin-top: 20px;">Login</button>
-
-                            <p class="mt-2 has-text-danger">{{login_error_message}}</p>
 
                             <p>Not registered yet? <a @click="is_registering = true" >Register</a></p>
                         </div>
@@ -73,9 +72,5 @@
 
     <!-- Import Js -->
     <script src="%%url_for('static', filename='main.js')%%"></script>    
-
-    <script>
-        const mountedApp = app.mount('#app')
-    </script>
   </body>
 </html>
