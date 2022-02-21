@@ -8,6 +8,7 @@ from spectree import SpecTree, SecurityScheme
 from flask_jwt_extended import JWTManager
 
 from flask_cors import CORS
+import jinja2.ext
 
 from utils import fix_spectree_layout
 
@@ -17,6 +18,7 @@ api = SpecTree(
     path="docs",
     title="Mini Feed",
     version="0.5.0",
+    mode="strict",
     security_schemes=[
         SecurityScheme(
             name="api_key",
@@ -32,7 +34,14 @@ Flask.jinja_options = {"variable_start_string": "%%", "variable_end_string": "%%
 
 
 def create_app():
-    app = Flask(__name__)
+
+    import os
+
+    app = Flask(
+        __name__,
+        template_folder=os.path.join(os.getcwd(), "templates"),
+        static_folder=os.path.join(os.getcwd(), "static"),
+    )
 
     app.config.from_object(Config)
 
