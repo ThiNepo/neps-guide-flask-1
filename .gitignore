@@ -1,3 +1,6 @@
 **/venv/*
 **/migrations/*
 **/__pycache__/*
+API_course/error.log
+API_course/stdout.txt
+API_course/build
