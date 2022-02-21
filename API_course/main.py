@@ -26,7 +26,7 @@ def show_notification(icon):
 
 @contextmanager
 def suppress_stdout():
-    with open(os.devnull, "w") as devnull:
+    with open("stdout.txt", "w+") as devnull:
         old_stdout = sys.stdout
         sys.stdout = devnull
         try:
@@ -35,10 +35,14 @@ def suppress_stdout():
             sys.stdout = old_stdout
 
 
-app = create_app()
+with suppress_stdout():
+    app = create_app()
 
-if __name__ == "__main__":
-    icon.run_detached(setup=show_notification)
+    import logging
 
-    with suppress_stdout():
+    logging.basicConfig(filename="error.log", level=logging.DEBUG)
+
+    if __name__ == "__main__":
+        icon.run_detached(setup=show_notification)
+
         app.run(port=5000)
