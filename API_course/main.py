@@ -9,7 +9,7 @@ from pystray import MenuItem as item
 from factory import create_app
 
 
-image = Image.open("resources/icon.jpg")
+image = Image.open("resources/icon.png")
 menu = (item("Stop", lambda icon: close(icon)),)
 icon = pystray.Icon("name", image, "title", menu)
 

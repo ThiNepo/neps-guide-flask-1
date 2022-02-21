@@ -20,7 +20,7 @@ build_exe_options = dict(
     includes=includes,
     packages=packages,
     excludes=excludes,
-    include_files=["resources/", "templates/", "static/"],
+    include_files=["resources/", "templates/", "static/", "app.db"],
 )  # folder,relative path. Use tuple like in the single file to set a absolute path.
 
 setup(
