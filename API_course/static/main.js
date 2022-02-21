@@ -1,3 +1,4 @@
+window.Vue = Vue;
 Vue.use(Toasted);
 
 const app = new Vue({
